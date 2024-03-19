@@ -1,0 +1,75 @@
+<div class="container bg-body-secondary p-4">
+
+    <h1 class="text-center">Cadastro de Produtos</h1>
+    <form [formGroup]="formgroupitem">
+  
+      <div class="row align-items-start">
+        <div class="col-5 m-auto">
+          <div class="mb-3">
+            <label for="id" class="form-label">ID</label>
+            <input type="text" class="form-control" id="id" formControlName="id"/>
+          </div>
+        </div>
+  
+        <div class="col-5 m-auto">
+          <div class="mb-3">
+            <label for="Nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="Nome" formControlName="name" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="row align-items-start">
+        <div class="col-5 m-auto">
+          <div class="mb-3">
+            <label for="Preço" class="form-label">Preço</label>
+            <input type="text" class="form-control" id="Preço" formControlName="price" />
+          </div>
+        </div>
+  
+        <div class="col-5 m-auto">
+          <div class="mb-3">
+            <label for="Quantidade" class="form-label">Quantidade</label>
+            <input type="text" class="form-control" id="Quantidade" formControlName="amount" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="row align-items-start">
+        <div class="col-11 m-auto">
+          <div class="mb-3">
+            <label for="Descrição" class="form-label">Descrição</label>
+            <input type="text" class="form-control" id="Descrição" formControlName="description" />
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button"
+        (click)="save()"
+        >Salvar</button>
+        <button class="btn btn-primary" type="button">Voltar</button>
+      </div>
+    </form>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+         
+          <th scope="col">Código</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of itens">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.amount}}</td>
+          <td>{{item.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
